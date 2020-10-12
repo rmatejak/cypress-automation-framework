@@ -15,7 +15,7 @@ describe("Test Contact Us form via https://automationteststore.com/", function (
     }, function () {
 
         cy.visit("https://automationteststore.com/")
-        cy.get('a[href$="contact222"]').click().then(function (tabNameText) {
+        cy.get('a[href$="contact"]').click().then(function (tabNameText) {
             cy.log("Tab name is: " + tabNameText.text())
         })
         //cy.xpath("//a[contains(@href, 'contact')]").click()

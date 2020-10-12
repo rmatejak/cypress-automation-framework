@@ -6,7 +6,7 @@ describe("Test Contact Us form via WebdriverUniversity.com", function () {
     // Cypress.config('defaultCommandTimeout', 20000)
     const homepage_PO = new Homepage_PO()
     const contact_Us_PO = new Contact_Us_PO()
-    
+
     beforeEach(function () {
         cy.fixture('example').then(function (data) {
             this.data = data
@@ -28,7 +28,10 @@ describe("Test Contact Us form via WebdriverUniversity.com", function () {
     })
 
     it("Should not be able to submit a successful subbmission via contact us form as all fields are required", function () {
-        contact_Us_PO.contactForm_Submission(this.data.first_name, this.data.last_name, " ", "Lecimy nie śpimy", 'body', 'Error: Invalid email address')
-    })
+        if (Cypress.isBrowser('firefox')) {
 
+        } else {
+            contact_Us_PO.contactForm_Submission(this.data.first_name, this.data.last_name, " ", "Lecimy nie śpimy", 'body', 'Error: Invalid email address')
+        }
+    })
 })

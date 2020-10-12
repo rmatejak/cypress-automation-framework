@@ -36,6 +36,7 @@ describe("Handling data via webdriveruni", () => {
         })
     })
 
+    //My sulution
     it("Calculate and assert the total age of all users", () => {
         let ageSum = 0
         cy.get('#thumbnail-1 td:nth-child(3)').each(($el, index, $list) => {
